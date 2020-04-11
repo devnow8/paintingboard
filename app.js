@@ -71,8 +71,12 @@ function handleModeClick(event) {
     }
 }
 
-function handleSave(event){
-    
+function handleSaveClick(event){
+    const image = canvas.toDataURL();
+    const link = document.createElement("a");
+    link.href = image;
+    link.download = "myPainting";
+    link.click();
 }
 
 if(canvas){
@@ -98,5 +102,5 @@ if(mode){
 }
 
 if(save){
-    save.addEventListener("click", handleSave);
+    save.addEventListener("click", handleSaveClick);
 }
